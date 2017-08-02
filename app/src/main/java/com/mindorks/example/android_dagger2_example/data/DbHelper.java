@@ -19,6 +19,12 @@ import javax.inject.Singleton;
  * Created by janisharali on 25/12/16.
  */
 
+/*
+singleton ensures single instance of a class globally.
+so ther will be only one instance of the dbHelper class in the whole app.
+Whenever some class asks for dbHelper AS a dependency it will be provided with the same instance that is maintained in Dagger's dependency graph
+
+ */
 @Singleton
 public class DbHelper extends SQLiteOpenHelper {
 
@@ -30,6 +36,9 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String USER_COLUMN_USER_CREATED_AT = "created_at";
     public static final String USER_COLUMN_USER_UPDATED_AT = "updated_at";
 
+    //@Inject tells dagger to accumulate all the parameter dependencies
+    //@ApplicationContext Qualifier faciliates dbHelper to get the context object of the applicaiton from dagger's dependency graph
+    //@Database info helps dagger distinguish between String and Integer dependencies from the same type existing in dependency graph
     @Inject
     public DbHelper(@ApplicationContext Context context,
                     @DatabaseInfo String dbName,

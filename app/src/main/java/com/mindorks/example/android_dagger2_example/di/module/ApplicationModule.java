@@ -20,6 +20,8 @@ public class ApplicationModule {
 
     private final Application mApplication;
 
+    //passing application instance in the constructor.
+    //apparently it will be used to provide other dependencies
     public ApplicationModule(Application app) {
         mApplication = app;
     }

@@ -24,8 +24,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTvUserInfo;
     private TextView mTvAccessToken;
 
+    //similarly in activity. We create DaggerComponent which implements the Activity Components and takes ActiviyModule
+    //were also passing applicationComponent that is necessary for Dependency Resolution mentioned in Activity module
     public ActivityComponent getActivityComponent() {
         if (activityComponent == null) {
+
             activityComponent = DaggerActivityComponent.builder()
                     .activityModule(new ActivityModule(this))
                     .applicationComponent(DemoApplication.get(this).getComponent())

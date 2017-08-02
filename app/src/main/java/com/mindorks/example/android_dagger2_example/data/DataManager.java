@@ -13,6 +13,11 @@ import javax.inject.Singleton;
  * Created by janisharali on 25/12/16.
  */
 
+
+/*
+This class provides all apis to to access data of the application
+ */
+
 @Singleton
 public class DataManager {
 
@@ -20,6 +25,8 @@ public class DataManager {
     private DbHelper mDbHelper;
     private SharedPrefsHelper mSharedPrefsHelper;
 
+
+   // This class expresses dependencies of Application Context, wtf does that mean?
     @Inject
     public DataManager(@ApplicationContext Context context,
                        DbHelper dbHelper,

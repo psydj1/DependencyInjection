@@ -9,6 +9,10 @@ import javax.inject.Qualifier;
  * Created by janisharali on 25/12/16.
  */
 
+/*
+Qualifier is used to distinguish between objects with the same type but different instances.
+ */
+
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ActivityContext {

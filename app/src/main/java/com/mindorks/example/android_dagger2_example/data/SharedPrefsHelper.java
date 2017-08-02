@@ -16,6 +16,8 @@ public class SharedPrefsHelper {
 
     private SharedPreferences mSharedPreferences;
 
+    //Also gets SharedPreferences dependency from Dagger
+    //how is it probided? explained later
     @Inject
     public SharedPrefsHelper(SharedPreferences sharedPreferences) {
         mSharedPreferences = sharedPreferences;

@@ -19,11 +19,17 @@ import dagger.Component;
  * Created by janisharali on 08/12/16.
  */
 
+//it is an interface which is implemented by dagger
+
 @Singleton
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
 
+    //why that?
+    //when dependencies are provided through field injection, we need to tell Dagger to scan this class through the implementation of this interface
     void inject(DemoApplication demoApplication);
+
+    //the rest are the methods which are used to access dependencies that exist on the dependency graph
 
     @ApplicationContext
     Context getContext();
